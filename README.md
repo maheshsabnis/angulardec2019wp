@@ -55,3 +55,17 @@ Angular Expternal Dependencies
 2. zone.js
 3. tslib
    1. Uses ES 6 / ES 7 standard object mapping with browser
+
+---
+
+Directives
+
+1. Component
+   1. Each component is directive
+2. Structural Directive
+   1. Dynamically Add/Remove DOM
+      1. \*ngFor --> for..of loop
+      2. \*ngIf --> If Condition
+      3. \*ngSwitch--ngSwitchCase
+3. Attribute
+   1. Behavior of HTML Element e.g. ngModel

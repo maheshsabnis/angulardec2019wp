@@ -1,0 +1,15 @@
+<!--Interpolation-->
+<div class="container">{{message}}</div>
+<span>{{2 + 3}}</span>
+<br>
+<!--The Property Binding-->
+<input type="text" [value]="message" class="form-control">
+<br>
+<!--Event Binding-->
+<input type="button" class="btn btn-success" value="Click Me" (click)="display()">
+<br>
+<input type="text" class="form-control" [(ngModel)]="name">
+<br>
+<input type="text" class="form-control" [(ngModel)]="name">
+<br>
+<input type="text" class="form-control" [(ngModel)]="name">

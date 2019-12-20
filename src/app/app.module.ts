@@ -2,12 +2,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // the FormModule is needed for ngModel for Two-Way binding
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SimpleComponent } from './components/simplecomponent/app.simple.component';
+import { ProductFormComponent } from './components/prouctformcomponent/app.productform.component';
+import { ProductReactiveFormComponent } from './components/prouctreactiveformcomponent/app.productreactiveform.component';
+import { TableComponent } from './components/tablecomponent/app.table.component';
+import { CategoryComponent } from './components/categoryComponent/app.category.component';
+import { ProductComponent } from './components/productcomponent/app.product.component';
 
 // declarations: of the tye array, declare all components, directives and
 // pipes for the current Angular application
@@ -18,13 +23,15 @@ import { SimpleComponent } from './components/simplecomponent/app.simple.compone
 // application is loaded in browser
 @NgModule({
   declarations: [
-    AppComponent, SimpleComponent
+    AppComponent, SimpleComponent, ProductFormComponent,
+    ProductReactiveFormComponent, TableComponent,
+    CategoryComponent, ProductComponent
   ],
   imports: [
-    BrowserModule, FormsModule,
+    BrowserModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [SimpleComponent]
+  bootstrap: [ CategoryComponent, ProductComponent]
 })
 export class AppModule { }

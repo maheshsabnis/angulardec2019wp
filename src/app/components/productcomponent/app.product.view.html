@@ -1,2 +1,24 @@
 <h2>List of Products</h2>
-<app-table-component [DataSource]="products"></app-table-component>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th> Product Id </th>
+            <th> Product Name </th>
+            <th> Cat Name </th>
+            <th> Manufacturer </th>
+
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of FilterProducts">
+            <td>{{prd.ProductId}}</td>
+            <td>{{prd.ProductName}}</td>
+            <td>{{prd.CatName}}</td>
+            <td>{{prd.Manufacturer}}</td>
+            <td>{{prd.Price}}</td>
+        </tr>
+    </tbody>
+</table>

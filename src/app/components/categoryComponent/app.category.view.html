@@ -1,2 +1,23 @@
 <h2>List of Categories</h2>
-<app-table-component [DataSource]="categories"></app-table-component>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Cat Id
+            </th>
+            <th>
+                Cat Name
+            </th>
+            <th>
+                Base Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cat of categories" (click)="getSelectedCategory(cat.CatName)">
+            <td>{{cat.CatId}}</td>
+            <td>{{cat.CatName}}</td>
+            <td>{{cat.BasePrice}}</td>
+        </tr>
+    </tbody>
+</table>

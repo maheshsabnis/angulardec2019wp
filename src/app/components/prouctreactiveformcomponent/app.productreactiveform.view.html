@@ -1,0 +1,45 @@
+<div class="container">
+    <!--map the formGroup with form-tag and its FormControl-->
+    <form name="frmProduct" [formGroup]="frmProduct" (ngSubmit)="save()">
+        <div class="form-group">
+            <!--Map each FormControl to form-element using
+             the formControlName attribute of ReactForms-->
+            <label>Product Id</label>
+            <input type="text" class="form-control" formControlName="ProductId" name="ProductId">
+            <div class="alert alert-danger" *ngIf="frmProduct.controls.ProductId.dirty&&!frmProduct.controls.ProductId.valid">
+                <div *ngIf="frmProduct.controls.ProductId.errors.required">ProductId is Must</div>
+                <div *ngIf="frmProduct.controls.ProductId.errors.minlength">ProductId Must be min 2 digits</div>
+                <div *ngIf="frmProduct.controls.ProductId.errors.maxlength">ProductId Must be max 8 digits</div>
+                <div *ngIf="frmProduct.controls.ProductId.errors.pattern">ProductId Must be numeric</div>
+                <div *ngIf="frmProduct.controls.ProductId.invalid">ProductId Must be Even</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" formControlName="ProductName" name="ProductName">
+        </div>
+        <div class="form-group">
+            <label>Category Name</label>
+            <select class="form-control" name="CatName" formControlName="CatName">
+        <option *ngFor="let c of categories" value="{{c}}">{{c}}</option>
+      </select>
+        </div>
+        <div class="form-group">
+            <label>Manufacturer</label>
+            <select class="form-control" name="Manufacturer" formControlName="Manufacturer">
+        <option *ngFor="let m of manufacturers" value="{{m}}">{{m}}</option>
+      </select>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" name="Price" formControlName="Price">
+        </div>
+        <div class="form-group">
+            <input type="button" value="Clear" (click)="clear()" class="btn btn-warning">
+            <input type="submit" value="Save" [disabled]="!frmProduct.valid" class="btn btn-success">
+        </div>
+    </form>
+</div>
+<div class="container">
+    <app-table-component [DataSource]="products" (notifyBack)="receiveData($event)"></app-table-component>
+</div>

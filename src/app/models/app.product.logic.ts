@@ -1,6 +1,6 @@
 import { Product } from './app.product.model';
 export class ProductLogic {
-  products: Array<Product>;
+  private products: Array<Product>;
 
   constructor(){
     this.products = new Array<Product>();
@@ -8,7 +8,7 @@ export class ProductLogic {
   }
   private loadData(): void {
     this.products.push(new Product(101,'Laptop','Electronics','HP',230000));
-    this.products.push(new Product(102,'Router','Electronics','IMB',1200));
+    this.products.push(new Product(102,'Router','Electronics','IBM',1200));
     this.products.push(new Product(103,'Iron','Electrical','Bajaj',2300));
     this.products.push(new Product(104,'Grinder','Electrical','Godrej',4500));
     this.products.push(new Product(105,'Biscuts','Food','Parle',10));

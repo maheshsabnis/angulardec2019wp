@@ -39,7 +39,11 @@
         </thead>
         <tbody>
             <tr *ngFor="let p of products" (click)="getSelectedProduct(p)">
-                <td *ngFor="let h of tableHeaders">{{p[h]}}</td>
+                <td>{{p.ProductId}}</td>
+                <td>{{p.ProductName |uppercase}}</td>
+                <td>{{p.CatName}}</td>
+                <td>{{p.Manufacturer}}</td>
+                <td>{{p.Price | currency:'INR'}}</td>
             </tr>
         </tbody>
     </table>

@@ -69,3 +69,59 @@ Directives
       3. \*ngSwitch--ngSwitchCase
 3. Attribute
    1. Behavior of HTML Element e.g. ngModel
+
+==============================================================
+1. @angular/common/http
+   1. HttpClientModule
+      1. Platform for Http Communication
+         1. Classes
+            1. HttpClient
+               1. get<T>/post<T>/put<T>/delete<T>/purge<T>/merge<T>
+                  1. T can be premptive type
+                  2. T can class
+                  3. JSON/XML/Text/BLOB/ArrayBuffer
+            2. HttpHeaders
+               1. Used by POST/PUT Requests
+                  1. Content-Type
+                  2. Authorization
+            3. HttpInteceptors
+               1. Common class that will be used to add headers for every http request
+
+------------------------------------------------------------------------------
+Directives
+1. Reusable UI Elements or attributes of UI elements those will be in action or activated when specific event(s) are fired
+2. Component Directives
+3. Structural Directives
+4. Attribute Directives
+   1. Activated based on Events
+5. Custom Attribute Directives
+   1. Class decorated with @Directive({selector:'[]'})
+   2. UI Requirements
+      1. ElementRef --> @angular/core, instantiated using BrowserModule
+         1. Modify the Exisiting UI
+      2. Renderer / Renderer2  --> @angular/core , instantiated using BrowserModule
+         1. Define Rendering for UI 
+   3. Data Binding Requirements
+      1. Define public properties decoarated usign @Input()
+   4. Logic
+      1. Directive Spcific Logic
+   5. Events
+      1. List of Events, used and hosted by directive to activate it
+      2. @HostListener Decorator
+         1. Applied on Logic method to invoke it when the event is fired
+         2. @HostListener('<NAME-OF-EVENT>')method1()
+
+
+-----------------------------------------------------------------------------
+Pipes
+1. The Text-Based Interpolation Transformation of data
+2. The class that is decorated with @Pipe decorator
+3. This class implements IPipeTransform interface and implements is transform() method
+   1. uppercase
+   2. lowercase
+   3. currency
+      1. Symbol:true
+   4. fulldate
+   5. shortdate
+   6. json
+4. {{PROPERTY|<PIPE-NAME>:<PARAMETERS>}}

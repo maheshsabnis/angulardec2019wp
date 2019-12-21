@@ -13,6 +13,15 @@ import { ProductReactiveFormComponent } from './components/prouctreactiveformcom
 import { TableComponent } from './components/tablecomponent/app.table.component';
 import { CategoryComponent } from './components/categoryComponent/app.category.component';
 import { ProductComponent } from './components/productcomponent/app.product.component';
+import { UtilityModule } from './../lib/app.utility.module';
+import { HttpCallComponent } from './components/httpservicecallcomponent/app.httpcall.component';
+import { HomeComponent } from './components/routingapp/app.home.component';
+import { AboutComponent } from './components/routingapp/app.about.component';
+import { ContactComponent } from './components/routingapp/app.contact.component';
+import { MainComponent } from './components/routingapp/app.main.component';
+import { ColorDirective } from './components/customdirectivecomponent/app.color.directive';
+import { DirectiveComponent } from './components/customdirectivecomponent/app.directive.component';
+import { PipeComponent } from './components/pipecomponent/app.pipe.component';
 
 // declarations: of the tye array, declare all components, directives and
 // pipes for the current Angular application
@@ -25,13 +34,16 @@ import { ProductComponent } from './components/productcomponent/app.product.comp
   declarations: [
     AppComponent, SimpleComponent, ProductFormComponent,
     ProductReactiveFormComponent, TableComponent,
-    CategoryComponent, ProductComponent
+    CategoryComponent, ProductComponent, HttpCallComponent,
+    HomeComponent, AboutComponent, ContactComponent, MainComponent,
+    ColorDirective, DirectiveComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule, UtilityModule
   ],
   providers: [],
-  bootstrap: [ CategoryComponent, ProductComponent]
+  bootstrap: [ProductFormComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ export class ProductLogic {
 
   constructor(){
     this.products = new Array<Product>();
+    this.loadData();
   }
   private loadData(): void {
     this.products.push(new Product(101,'Laptop','Electronics','HP',230000));
